@@ -18,7 +18,7 @@
             </div>
             <div class="footer">
                 <div class="pull-right">
-                    <strong><a target="_blank" href="#">Mohamed Elshahat</a></strong>
+                    <strong><a target="_blank" href="https://www.linkedin.com/in/mohamed-elshahat-0a7747190">Mohamed Elshahat</a></strong>
                 </div>
             </div>
         </div>

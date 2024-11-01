@@ -6,7 +6,6 @@ use App\DTO\PostDTO;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreatePostRequest;
 use App\Http\Requests\UpdatePostRequest;
-use Illuminate\Http\Request;
 use App\Services\Interfaces\IPostsService;
 
 class PostsController extends Controller

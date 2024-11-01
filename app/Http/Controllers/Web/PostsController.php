@@ -4,13 +4,15 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Posts;
+use App\Services\Interfaces\IPostsService;
 
 class PostsController extends Controller
 {
+    public function __construct(private readonly IPostsService $postsService) {}
+
     public function posts()
     {
-        $posts = Posts::all();
+        $posts = $this->postsService->getAllPosts();
         return view('crm.posts.index', compact('posts'));
     }
 
@@ -21,31 +23,31 @@ class PostsController extends Controller
 
     public function create(Request $request)
     {
-        Posts::create($request->except('_token'));
+        $this->postsService->createPost($request);
         return to_route('posts');
     }
 
     public function view($id)
     {
-        $post = Posts::find($id);
+        $post = $this->postsService->getPostByID($id);
         return view('crm.posts.view', compact('post'));
     }
 
     public function edit($id)
     {
-        $post = Posts::find($id);
+        $post = $this->postsService->getPostByID($id);
         return view('crm.posts.edit', compact('post'));
     }
 
     public function update(Request $request, $id)
     {
-        Posts::where('id', $id)->update($request->except('_token'));
+        $this->postsService->updatePost($request, $id);
         return to_route('posts');
     }
 
     public function delete($id)
     {
-        Posts::where('id', $id)->delete();
+        $this->postsService->deletePostByID($id);
         return response()->json(true);
     }
 }

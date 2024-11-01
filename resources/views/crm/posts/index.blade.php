@@ -14,22 +14,22 @@
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <form class="row g-3" method="GET" action="/posts">
-                            <div class="col-md-3">
+                            <div class="col-sm-3">
                                 <label class="form-label">Title:</label>
                                 <input type="text" class="form-control" placeholder="Enter Title" name="title"
                                     value="{{ request('title') }}">
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-sm-3">
                                 <label class="form-label">Contact No:</label>
                                 <input type="text" class="form-control" placeholder="Enter Contact No."
                                     name="contact_phone_number" value="{{ request('contact_phone_number') }}">
                             </div>
-                            <div class="col-4">
+                            <div class="col-sm-4">
                                 <label class="form-label">Description:</label>
                                 <input type="text" class="form-control" placeholder="Enter Description"
                                     name="description" value="{{ request('description') }}">
                             </div>
-                            <div class="col-2" style="text-align: center;padding-top: 30px;">
+                            <div class="col-sm-2" style="text-align: center;padding-top: 30px;">
                                 <button type="submit" class="btn btn-primary" style="width: 100%;">Search...</button>
                             </div>
                         </form>

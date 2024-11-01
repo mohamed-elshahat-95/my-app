@@ -7,11 +7,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreatePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 
-use App\Services\Interfaces\ICreatePostService;
-use App\Services\Interfaces\IDeletePostService;
-use App\Services\Interfaces\IGetOnePostService;
-use App\Services\Interfaces\IGetPostsService;
-use App\Services\Interfaces\IUpdatePostService;
+use App\Services\PostsServices\Interfaces\ICreatePostService;
+use App\Services\PostsServices\Interfaces\IDeletePostService;
+use App\Services\PostsServices\Interfaces\IGetOnePostService;
+use App\Services\PostsServices\Interfaces\IGetPostsService;
+use App\Services\PostsServices\Interfaces\IUpdatePostService;
 
 class PostsController extends Controller
 {

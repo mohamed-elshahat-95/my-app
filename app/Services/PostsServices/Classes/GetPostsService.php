@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services\Classes;
+namespace App\Services\PostsServices\Classes;
 
-use App\Services\Interfaces\IGetPostsService;
+use App\Services\PostsServices\Interfaces\IGetPostsService;
 use App\Models\Posts;
 
 class GetPostsService implements IGetPostsService

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services\Classes;
+namespace App\Services\PostsServices\Classes;
 
-use App\Services\Interfaces\ICreatePostService;
+use App\Services\PostsServices\Interfaces\ICreatePostService;
 use App\DTO\PostDTO;
 use App\Models\Posts;
 

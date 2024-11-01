@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services\Classes;
+namespace App\Services\PostsServices\Classes;
 
-use App\Services\Interfaces\IGetOnePostService;
+use App\Services\PostsServices\Interfaces\IGetOnePostService;
 use App\Exceptions\PostNotFountException;
 use App\Models\Posts;
 

@@ -2,17 +2,17 @@
 
 namespace App\Providers;
 
-use App\Services\Classes\CreatePostService;
-use App\Services\Classes\DeletePostService;
-use App\Services\Classes\GetOnePostService;
-use App\Services\Classes\GetPostsService;
-use App\Services\Classes\UpdatePostService;
+use App\Services\PostsServices\Classes\CreatePostService;
+use App\Services\PostsServices\Classes\DeletePostService;
+use App\Services\PostsServices\Classes\GetOnePostService;
+use App\Services\PostsServices\Classes\GetPostsService;
+use App\Services\PostsServices\Classes\UpdatePostService;
 
-use App\Services\Interfaces\ICreatePostService;
-use App\Services\Interfaces\IDeletePostService;
-use App\Services\Interfaces\IGetOnePostService;
-use App\Services\Interfaces\IGetPostsService;
-use App\Services\Interfaces\IUpdatePostService;
+use App\Services\PostsServices\Interfaces\ICreatePostService;
+use App\Services\PostsServices\Interfaces\IDeletePostService;
+use App\Services\PostsServices\Interfaces\IGetOnePostService;
+use App\Services\PostsServices\Interfaces\IGetPostsService;
+use App\Services\PostsServices\Interfaces\IUpdatePostService;
 
 
 use Illuminate\Support\ServiceProvider;

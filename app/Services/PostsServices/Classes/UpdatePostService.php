@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services\Classes;
+namespace App\Services\PostsServices\Classes;
 
-use App\Services\Interfaces\IUpdatePostService;
+use App\Services\PostsServices\Interfaces\IUpdatePostService;
 use App\DTO\PostDTO;
 use App\Models\Posts;
 

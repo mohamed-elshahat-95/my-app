@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services\Classes;
+namespace App\Services\PostsServices\Classes;
 
-use App\Services\Interfaces\IDeletePostService;
+use App\Services\PostsServices\Interfaces\IDeletePostService;
 use App\Models\Posts;
 
 class DeletePostService implements IDeletePostService

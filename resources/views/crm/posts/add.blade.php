@@ -3,11 +3,25 @@
 @section('content')
     <div class="container">
         <p><b> Add New Post </b></p>
+        <!-- Display validation errors -->
+        @if ($errors->any())
+            <div style="color: red;">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form class="row g-3" method="POST" action="/posts/create">
             @csrf
             <div class="col-md-6">
                 <label class="form-label">Title:</label>
-                <input type="text" class="form-control" placeholder="Enter Title" name="title" required>
+                <input type="text" class="form-control" placeholder="Enter Title" name="title">
+                <!-- Display error for name -->
+                @error('title')
+                    <div style="color: red;">{{ $message }}</div>
+                @enderror
             </div>
             <div class="col-md-6">
                 <label class="form-label">Contact No:</label>

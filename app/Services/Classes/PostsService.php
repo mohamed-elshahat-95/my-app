@@ -2,6 +2,7 @@
 
 namespace App\Services\Classes;
 
+use App\DTO\PostDTO;
 use App\Exceptions\PostNotFountException;
 use App\Services\Interfaces\IPostsService;
 use Illuminate\Http\Request;
@@ -19,15 +20,23 @@ class PostsService implements IPostsService
         return $post;
     }
 
-    public function createPost(Request $request)
+    public function createPost(PostDTO $postDTO)
     {
-        Posts::create($request->except('_token'));
+        Posts::create([
+            'title' => $postDTO->title,
+            'description' => $postDTO->description,
+            'contact_phone_number' => $postDTO->contact_phone_number,
+        ]);
         return true;
     }
 
-    public function updatePost(Request $request, $id)
+    public function updatePost(PostDTO $postDTO, $id)
     {
-        Posts::where('id', $id)->update($request->except('_token'));
+        Posts::where('id', $id)->update([
+            'title' => $postDTO->title,
+            'description' => $postDTO->description,
+            'contact_phone_number' => $postDTO->contact_phone_number,
+        ]);
         return true;
     }
 

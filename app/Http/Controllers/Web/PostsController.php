@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\DTO\PostDTO;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreatePostRequest;
+use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Http\Request;
 use App\Services\Interfaces\IPostsService;
 
@@ -21,9 +24,10 @@ class PostsController extends Controller
         return view('crm.posts.add');
     }
 
-    public function create(Request $request)
+    public function create(CreatePostRequest $request)
     {
-        $this->postsService->createPost($request);
+        $postDTO = new PostDTO($request->input('title'), $request->input('description'), $request->input('contact_phone_number'));
+        $this->postsService->createPost($postDTO);
         return to_route('posts');
     }
 
@@ -39,9 +43,10 @@ class PostsController extends Controller
         return view('crm.posts.edit', compact('post'));
     }
 
-    public function update(Request $request, $id)
+    public function update(UpdatePostRequest $request, $id)
     {
-        $this->postsService->updatePost($request, $id);
+        $postDTO = new PostDTO($request->input('title'), $request->input('description'), $request->input('contact_phone_number'));
+        $this->postsService->updatePost($postDTO, $id);
         return to_route('posts');
     }
 

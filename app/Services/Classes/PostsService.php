@@ -2,6 +2,7 @@
 
 namespace App\Services\Classes;
 
+use App\Exceptions\PostNotFountException;
 use App\Services\Interfaces\IPostsService;
 use Illuminate\Http\Request;
 use App\Models\Posts;
@@ -13,7 +14,9 @@ class PostsService implements IPostsService
     }
 
     public function getPostByID($id) {
-        return Posts::find($id);
+        $post = Posts::find($id);
+        if (!$post) throw new PostNotFountException;
+        return $post;
     }
 
     public function createPost(Request $request)

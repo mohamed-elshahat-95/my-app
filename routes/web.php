@@ -14,5 +14,4 @@ Route::group(['prefix' => 'posts'], function () {
     Route::get('/edit/{id}', [PostsController::class, 'edit']);
     Route::post('/update/{id}', [PostsController::class, 'update']);
     Route::get('/delete/{id}', [PostsController::class, 'delete']);
-
 });

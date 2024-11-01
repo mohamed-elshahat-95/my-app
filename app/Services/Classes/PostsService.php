@@ -5,7 +5,6 @@ namespace App\Services\Classes;
 use App\DTO\PostDTO;
 use App\Exceptions\PostNotFountException;
 use App\Services\Interfaces\IPostsService;
-use Illuminate\Http\Request;
 use App\Models\Posts;
 
 class PostsService implements IPostsService

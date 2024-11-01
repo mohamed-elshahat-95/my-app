@@ -16,7 +16,7 @@
             <div class="wrapper wrapper-content">
                 @yield('content')
             </div>
-            <div class="footer">
+            <div class="footer" style="text-align: right;padding: 20px;">
                 <div class="pull-right">
                     <strong><a target="_blank" href="https://www.linkedin.com/in/mohamed-elshahat-0a7747190">Mohamed Elshahat</a></strong>
                 </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreatePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Posts;
+use App\Services\CustomersServices\Classes\CustomerClass;
 use App\Services\PostsServices\Interfaces\ICreatePostService;
 use App\Services\PostsServices\Interfaces\IDeletePostService;
 use App\Services\PostsServices\Interfaces\IGetOnePostService;
@@ -70,7 +71,13 @@ class PostsController extends Controller
     public function test()
     {
         // $posts = Posts::whereIn('id', range(1, 10000))->get();
-        $posts = Posts::find(range(1, 10000));
-        return 'Done';
+        // $posts = Posts::find(range(1, 10000));
+
+        // Call welcome statically
+        // return CustomerClass::welcome();
+
+        // Call welcome using instance from class
+        // $customerClassOBJ = new CustomerClass();
+        // return $customerClassOBJ->welcome();
     }
 }

@@ -6,12 +6,13 @@ use App\DTO\PostDTO;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreatePostRequest;
 use App\Http\Requests\UpdatePostRequest;
-
+use App\Models\Posts;
 use App\Services\PostsServices\Interfaces\ICreatePostService;
 use App\Services\PostsServices\Interfaces\IDeletePostService;
 use App\Services\PostsServices\Interfaces\IGetOnePostService;
 use App\Services\PostsServices\Interfaces\IGetPostsService;
 use App\Services\PostsServices\Interfaces\IUpdatePostService;
+use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
@@ -64,5 +65,12 @@ class PostsController extends Controller
     {
         $this->deletePostService->deletePostByID($id);
         return response()->json(true);
+    }
+
+    public function test()
+    {
+        // $posts = Posts::whereIn('id', range(1, 10000))->get();
+        $posts = Posts::find(range(1, 10000));
+        return 'Done';
     }
 }

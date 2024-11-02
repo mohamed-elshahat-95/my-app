@@ -43,7 +43,7 @@
             <a href="posts/add" target="_blank" class="btn btn-sm btn-primary">Add new post ... </a>
 
             <hr>
-            <table class="table table-striped table-hover table-bordered border-primary">
+            <table class="table table-striped table-hover table-bordered border-primary" id="myTable">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -87,6 +87,10 @@
 @stop()
 @section('scripts')
     <script>
+        let table = new DataTable('#myTable', {
+            responsive: true
+        });
+
         function deletePost(id) {
             $.ajax({
                 url: `posts/delete/${id}`,

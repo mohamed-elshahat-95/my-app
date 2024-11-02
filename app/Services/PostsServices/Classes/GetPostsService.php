@@ -28,6 +28,6 @@ class GetPostsService implements IGetPostsService
             $query->where('description', 'LIKE', "%$description%");
         }
 
-        return $query->get();
+        return $query->limit(100)->get();
     }
 }

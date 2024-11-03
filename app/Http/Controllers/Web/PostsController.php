@@ -79,5 +79,13 @@ class PostsController extends Controller
         // Call welcome using instance from class
         // $customerClassOBJ = new CustomerClass();
         // return $customerClassOBJ->welcome();
+
+        // Stored Procedures
+        // $contact_phone_number = '435-371-3362';
+        // $post = DB::select("call getPostByContactPhoneNumber('$contact_phone_number')");
+        // dd($post);
+
+        // $allPosts = DB::select("call getAllPosts()");
+        // dd($allPosts);
     }
 }

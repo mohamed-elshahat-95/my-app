@@ -16,6 +16,15 @@
                         <li><a class="dropdown-item" href="/posts">All Posts</a></li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Orders
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/orders/add">Create Order</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

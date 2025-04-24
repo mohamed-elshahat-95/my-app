@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Models\Posts;
 use Illuminate\Support\Facades\Validator;
 
-class PostsController extends Controller
+class ApiPostsController extends Controller
 {
     public function getPosts(){
         $recentPosts = Posts::selectRaw("id, title, LEFT(`description`, 512) as description, contact_phone_number, image, created_at, created_by")

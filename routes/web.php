@@ -1,23 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\Web\HomeController;
+use App\Http\Controllers\Web\OrdersController;
+use App\Http\Controllers\Web\PostsController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-use App\Models\Posts;
-Route::get('/', function () {
-    $posts = Posts::with('creator')->get();
-    return view('welcome', compact('posts'));
+Route::get('/', [HomeController::class, 'index']);
+
+Route::group(['prefix' => 'posts'], function () {
+    Route::get('/', [PostsController::class, 'posts'])->name('posts');
+    Route::get('/add', [PostsController::class, 'add']);
+    Route::post('/create', [PostsController::class, 'create']);
+    Route::get('/view/{id}', [PostsController::class, 'view']);
+    Route::get('/edit/{id}', [PostsController::class, 'edit']);
+    Route::post('/update/{id}', [PostsController::class, 'update']);
+    Route::get('/delete/{id}', [PostsController::class, 'delete']);
 });
 
-Route::get('customers/{id}', [CustomerController::class, 'getCustomerByID']);
-Route::get('test', [CustomerController::class, 'test']);
+Route::group(['prefix' => 'orders'], function () {
+    Route::get('/add', [OrdersController::class, 'add']);
+    Route::post('/create', [OrdersController::class, 'create']);
+});
+
+Route::get('/test', [PostsController::class, 'test']);

@@ -25,7 +25,7 @@
                 <div class="col-sm-3">
                   <div style="padding: 10px">
                     <h3>{{$post->title}}</h3>
-                    <h5><span class="glyphicon glyphicon-time"></span> Post by {{$post->creator->name}}, {{$post->created_at}}.</h5>
+                    <h5><span class="glyphicon glyphicon-time"></span> Post by {{$post->creator->name??''}}, {{$post->created_at}}.</h5>
                     <p>{{$post->description}}</p>
                     <h5>Leave a Comment:</h5>
                     <form>

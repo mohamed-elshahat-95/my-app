@@ -1,29 +1,17 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ApiController;
-use App\Http\Controllers\PostsController;
+use App\Http\Controllers\API\ApiAuthController;
+use App\Http\Controllers\API\ApiPostsController;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
-
-Route::post('/register', [ApiController::class, 'register']);
-Route::post('/login', [ApiController::class, 'login']);
+Route::post('/register', [ApiAuthController::class, 'register']);
+Route::post('/login', [ApiAuthController::class, 'login']);
 
 Route::group(['prefix' => 'posts', 'middleware' => ['auth:sanctum']], function () {
-    Route::get('/', [PostsController::class, 'getPosts']);
-    Route::get('{post_id}', [PostsController::class, 'showPost']);
-    Route::post('/create', [PostsController::class, 'createPost']);
-    Route::post('/{post_id}/upload-image', [PostsController::class, 'uploadImage']);
+    Route::get('/', [ApiPostsController::class, 'getPosts']);
+    Route::get('{post_id}', [ApiPostsController::class, 'showPost']);
+    Route::post('/create', [ApiPostsController::class, 'createPost']);
+    Route::post('/{post_id}/upload-image', [ApiPostsController::class, 'uploadImage']);
 });
 
 
